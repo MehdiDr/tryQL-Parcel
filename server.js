@@ -5,11 +5,11 @@ import bodyParser from 'body-parser';
 
 import { schema } from './src/schema';
 
-const PORT = 5000;
+const PORT = 7700;
 const server = express();
 
-server.use('*', cors({ origin: 'http://localhost:8000' }));
+server.use('*', cors({ origin: 'http://localhost:7800' }));
 server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
-server.use('/graphiql', graphiqlExpress({ endpointURL: 'graphql' }));
+server.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 server.listen(PORT, () => console.log(`Ton server tourne sur le port ${PORT}`));

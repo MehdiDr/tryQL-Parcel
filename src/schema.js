@@ -4,7 +4,7 @@ import { resolvers } from './resolvers';
 
 // ! for required, [] for a list.
 const typeDefs = `
-  type VideoGames {
+  type Channel {
     id: ID!
     name: String
     messages: [Message]!
@@ -21,7 +21,7 @@ const typeDefs = `
   } 
 
   type Mutation {
-    addChanel(name: String!): Channel
+    addChannel(name: String!): Channel
   }
 `;
 
